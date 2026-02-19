@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, START, END
-from state import GraphState
-from nodes import (
+from app.engine.state import GraphState
+from app.engine.nodes import (
     generate_component,
     modify_component,
     validate_component_llm,
