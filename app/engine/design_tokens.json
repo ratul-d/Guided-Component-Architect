@@ -1,0 +1,10 @@
+{
+  "colors": {
+    "primary": "#6366f1",
+    "secondary": "#0ea5e9",
+    "background": "#ffffff"
+  },
+  "borderRadius": "8px",
+  "fontFamily": "Inter",
+  "shadow": "0 4px 30px rgba(0, 0, 0, 0.1)"
+}
