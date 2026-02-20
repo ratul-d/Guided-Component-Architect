@@ -3,8 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.engine.graph import build_graph
 from app.api.schemas import GenerateRequest, GenerateResponse
 from app.api.session_store import session_store
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
 from io import BytesIO
+from fastapi.staticfiles import StaticFiles
+import os
 
 app = FastAPI(title="Guided Component Architect API")
 
@@ -17,6 +19,12 @@ app.add_middleware(
 )
 
 graph = build_graph()
+
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+@app.get("/")
+def serve_frontend():
+    return FileResponse(os.path.join("frontend", "index.html"))
 
 @app.post("/generate", response_model=GenerateResponse)
 def generate_component(request: GenerateRequest):
