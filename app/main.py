@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.engine.graph import build_graph
 from app.api.schemas import GenerateRequest, GenerateResponse
 from app.api.session_store import session_store
@@ -6,6 +7,14 @@ from fastapi.responses import StreamingResponse
 from io import BytesIO
 
 app = FastAPI(title="Guided Component Architect API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 graph = build_graph()
 

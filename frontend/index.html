@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-title">
+        <h1>Guided Component Architect</h1>
+        <p>Generate styled components with AI</p>
+      </div>
+      <button type="button" class="reset-btn" id="resetBtn">Reset Chat</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="messages-container" id="messagesContainer">
+      <div class="welcome">
+        <div class="welcome-icon">🎨</div>
+        <h2>Ready to generate components</h2>
+        <p>Describe the component you want to create</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <form class="input-container" id="generateForm">
+      <input
+        type="text"
+        id="promptInput"
+        placeholder="Describe the component you want to generate..."
+        autocomplete="off"
+      />
+      <div class="framework-selector">
+        <select id="frameworkSelect">
+          <option value="tailwind">Tailwind CSS</option>
+          <option value="angular-material">Angular Material</option>
+        </select>
+      </div>
+      <button type="submit">Generate</button>
+    </form>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
