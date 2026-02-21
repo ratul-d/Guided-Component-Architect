@@ -1,6 +1,6 @@
 # Guided Component Architect
 
-An AI-powered Angular component generator that uses LangGraph and OpenAI to create, validate, and iteratively fix styled components based on natural language prompts.
+An AI-powered Angular component generator that uses LangGraph-driven LLM workflow to create, validate, and iteratively fix styled components based on natural language prompts.
 
 ---
 
@@ -80,5 +80,36 @@ Simply open:
 ```
 http://localhost:8000
 ```
+
+---
+
+## CLI Mode (Optional)
+
+In addition to the web interface, you can use the component generator directly from the command line.
+
+This runs the same LangGraph workflow (generate → validate → fix loop) but without the frontend.
+
+### Run in CLI mode
+
+From the project root:
+
+```bash
+python -m app.engine.cli
+```
+
+You will be prompted to:
+
+1. Choose a CSS framework (`tailwind`, `angular-material`, or `custom`)
+2. Enter a natural language description of the component
+
+The generated Angular component will be printed directly in the terminal.
+
+Type:
+
+```
+exit
+```
+
+to quit the CLI session.
 
 ---
